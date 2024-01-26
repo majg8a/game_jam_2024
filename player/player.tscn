@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb365t1eavs8g"]
+
+[ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_jet1c"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_gvyqp"]
+
+[node name="player" type="Node2D"]
+
+[node name="character" parent="." instance=ExtResource("1_jet1c")]
+
+[node name="entity" parent="character" index="0"]
+script = ExtResource("2_gvyqp")
+
+[node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
+
+[editable path="character"]

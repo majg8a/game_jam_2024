@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4yjsj86cupi"]
+
+[ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_00udk"]
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="2_khtof"]
+
+[node name="enemy" type="Node2D"]
+
+[node name="character" parent="." instance=ExtResource("1_00udk")]
+
+[node name="entity" parent="character" index="0"]
+script = ExtResource("2_khtof")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[editable path="character"]
