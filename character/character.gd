@@ -2,13 +2,13 @@ class_name character extends entity
 
 var animations: Dictionary = {
 	Vector2.UP: func ():
-		self.animatedSprite2D.play("up"),
+		self.animatedSprite2D.play("move_up"),
 	Vector2.RIGHT: func ():
-		self.animatedSprite2D.play("right"),
+		self.animatedSprite2D.play("move_right"),
 	Vector2.DOWN: func ():
-		self.animatedSprite2D.play("down"),
+		self.animatedSprite2D.play("move_down"),
 	Vector2.LEFT: func ():
-		self.animatedSprite2D.play("left")
+		self.animatedSprite2D.play("move_left")
 }
 
 enum STATE {ALIVE, DEAD}
