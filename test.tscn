@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr865hiunhjje"]
+
+[ext_resource type="PackedScene" uid="uid://ct2m3511fugn3" path="res://random_walk/random_walk.tscn" id="1_teykk"]
+[ext_resource type="PackedScene" uid="uid://bb365t1eavs8g" path="res://player/player.tscn" id="2_lm1s7"]
+
+[node name="test" type="Node2D"]
+
+[node name="random_walk" parent="." instance=ExtResource("1_teykk")]
+
+[node name="TileMap" parent="random_walk/map" index="0"]
+tile_set = null
+
+[node name="player" parent="random_walk" instance=ExtResource("2_lm1s7")]
+
+[editable path="random_walk"]
+[editable path="random_walk/map"]

@@ -29,7 +29,24 @@ func generate():
 		currentPosition = addToFloor(floor,fardestDir, currentPosition ,currentDirection)
 		currentDirection = direction.getRandomDirection()
 		tileMap.set_cell(0,currentPosition,0,Vector2i(0,0))
-	
+		
+	var walls : Dictionary={}
+		
+	var wallTileNames : Dictionary={
+		Vector2.UP: "up_wall",
+		Vector2.RIGHT: "right_wall",
+		Vector2.LEFT: "left_wall",
+		Vector2.DOWN: "down_wall"
+	}
+		
+	for position in floor.keys():
+		
+		for direction2 in direction.directions:
+			var neighbor_position:Vector2 = position + direction2
+			if(tileMap.get_cell_source_id(0,position + direction2)== -1):
+				walls[neighbor_position] = wallTileNames[direction2]
+				print(wallTileNames[direction2])
+		
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
 	currentPosition = fardestDir[currentDirection] + currentDirection if floor.has(currentPosition) else currentPosition
