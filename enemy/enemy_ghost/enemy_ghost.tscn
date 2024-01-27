@@ -265,6 +265,7 @@ animations = [{
 
 [node name="entity" parent="enemy/character" index="0"]
 position = Vector2(293, 123)
+scale = Vector2(5, 5)
 script = ExtResource("2_fcp6t")
 
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]

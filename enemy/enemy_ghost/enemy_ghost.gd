@@ -9,7 +9,7 @@ func _init():
 func _ready():
 	super._ready()
 	var onDirectionChange = func (direction):
-		self.animations[direction].apply()
+		self.animations[direction].call()
 	directionSignal.connect(onDirectionChange)
 	
 	
@@ -22,5 +22,5 @@ func behavior():
 			pass
 	}
 	
-	behaviors[self.currentBehavior]
+	behaviors[self.currentBehavior].call()
 	
