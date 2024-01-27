@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmprvo2monty1"]
+
+[ext_resource type="PackedScene" uid="uid://i0cl4xkdk10k" path="res://enemy/enemy_ghost/enemy_ghost.tscn" id="1_wxop4"]
+
+[node name="prueba_scale" type="Node2D"]
+
+[node name="enemy_ghost" parent="." instance=ExtResource("1_wxop4")]

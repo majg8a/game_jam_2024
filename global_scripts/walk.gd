@@ -2,6 +2,7 @@ class_name walk
 
 func random(node: CharacterBody2D = null):
 	var directions: Direction = Direction.new()
+	directions.directions.push_back(Vector2.ZERO)
 	var direction = directions.getRandomDirection()
 	if node != null:
 		node.move_and_collide( node.speed * direction)

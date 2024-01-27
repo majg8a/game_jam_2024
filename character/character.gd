@@ -1,16 +1,5 @@
 class_name character extends entity
 
-var animations: Dictionary = {
-	Vector2.UP: func ():
-		self.animatedSprite2D.play("move_up"),
-	Vector2.RIGHT: func ():
-		self.animatedSprite2D.play("move_right"),
-	Vector2.DOWN: func ():
-		self.animatedSprite2D.play("move_down"),
-	Vector2.LEFT: func ():
-		self.animatedSprite2D.play("move_left")
-}
-
 enum STATE {ALIVE, DEAD}
 
 signal maxLifeSignal(life:int)
@@ -30,7 +19,7 @@ func _init():
 	var onStateChange: Callable = func (state):
 		currentState = state
 	stateSignal.connect(onStateChange)
-	
+
 	
 	var onMaxLifeChange: Callable = func (life):
 		currentMaxLife = life

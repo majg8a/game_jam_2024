@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://xiqow1dvn0s0"]
+
+[ext_resource type="PackedScene" uid="uid://vuhilcftjw5k" path="res://skill/skill.tscn" id="1_epv6s"]
+[ext_resource type="Script" path="res://melee/melee.gd" id="2_0aam1"]
+
+[node name="melee" type="Node2D"]
+
+[node name="skill" parent="." instance=ExtResource("1_epv6s")]
+
+[node name="entity" parent="skill" index="0"]
+script = ExtResource("2_0aam1")
+
+[editable path="skill"]
+[editable path="skill/entity"]

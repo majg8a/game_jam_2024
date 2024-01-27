@@ -1,7 +1,7 @@
 class_name enemy extends character
 
 @onready var area2DRange: Area2D = $Area2DRange
-@onready var CollisionShape2DRange: CollisionObject2D = get_node("Area2DRange/CollisionShape2DRange")
+@onready var CollisionShape2DRange: CollisionShape2D = get_node("Area2DRange/CollisionShape2DRange")
 
 enum BEHAVIOR {IDLE, AGGRESSIVE}
 signal behaviorSignal(behavior: BEHAVIOR)
@@ -19,10 +19,16 @@ func _init():
 	behaviorSignal.connect(onBehaviorChange)
 
 func _ready():
-	var onContact: Callable  = func (body):
+	super._ready()
+	var onBodyEntered: Callable  = func (body):
 		if body.name == "player":
 			self.behaviorSignal.emit(BEHAVIOR.AGGRESSIVE)
-	self.area2DRange.body_entered.connect(onContact)
+	self.area2DRange.body_entered.connect(onBodyEntered)
+	
+	var onBodyExit: Callable  = func (body):
+		if body.name == "player":
+			self.behaviorSignal.emit(BEHAVIOR.IDLE)
+	self.area2DRange.body_exited.connect(onBodyExit)
 	
 	var shape: RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.range
