@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct2m3511fugn3"]
+[gd_scene load_steps=5 format=3 uid="uid://ct2m3511fugn3"]
 
 [ext_resource type="PackedScene" uid="uid://bcrbl21e0pps2" path="res://map/map.tscn" id="1_rhjjp"]
 [ext_resource type="Script" path="res://random_walk/random_walk.gd" id="2_60wq8"]
-[ext_resource type="Texture2D" uid="uid://dtsf57n5t6okr" path="res://assets/Untitled.png" id="3_p26s3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18g3u"]
-texture = ExtResource("3_p26s3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

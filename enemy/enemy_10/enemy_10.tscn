@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dso4elu6y6lna"]
+
+[ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_0v7hf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jg26p"]
+
+[node name="enemy_10" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_0v7hf")]
+
+[node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
+sprite_frames = SubResource("SpriteFrames_jg26p")
+
+[editable path="enemy"]
+[editable path="enemy/character"]
+[editable path="enemy/character/entity"]
