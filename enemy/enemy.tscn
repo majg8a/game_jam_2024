@@ -14,4 +14,8 @@ script = ExtResource("2_khtof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+[node name="Area2DRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DRange"]
+
 [editable path="character"]

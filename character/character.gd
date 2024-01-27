@@ -25,7 +25,8 @@ var currentState = STATE.ALIVE
 signal skillsSignals(skills: Array)
 var currentSkills: Array = []
 
-func _init():
+func _init(size: Vector2):
+	super._init(size)
 	var onStateChange: Callable = func (state):
 		currentState = state
 	stateSignal.connect(onStateChange)
