@@ -5,9 +5,6 @@ class_name entity extends CharacterBody2D
 
 var size:Vector2 = Vector2(1,1)
 
-func _init(size:Vector2):
-	self.size = size
-
 func _ready():
 	var shape:RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.size
