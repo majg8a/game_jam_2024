@@ -4,7 +4,7 @@ var walkInstance: walk = walk.new()
 
 func _init():
 	super._init()
-	self.size = Vector2(15000,15000)
+	self.size = Vector2(15,15)
 
 func _ready():
 	super._ready()

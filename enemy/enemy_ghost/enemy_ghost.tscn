@@ -272,6 +272,9 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qcjji")
 animation = &"move_down"
 
+[node name="CollisionShape2D" parent="enemy/character/entity/Area2D" index="0"]
+scale = Vector2(1, 1.19311)
+
 [editable path="enemy"]
 [editable path="enemy/character"]
 [editable path="enemy/character/entity"]
