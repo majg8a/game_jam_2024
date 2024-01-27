@@ -1,23 +1,32 @@
 class_name enemy extends character
 
 @onready var area2DRange: Area2D = $Area2DRange
+@onready var CollisionShape2DRange: CollisionObject2D = get_node("Area2DRange/CollisionShape2DRange")
 
 enum BEHAVIOR {IDLE, AGGRESSIVE}
-
-var range: float = 1.0
+signal behaviorSignal(behavior: BEHAVIOR)
+var currentBehavior = BEHAVIOR.IDLE
+var range:Vector2 = Vector2(2,2)
 var detectionRange: float = 2.0
 var speed: Vector2 = Vector2(2,2)
 var reactionTimeSec = 1
 
-func _init(range: Vector2, shape: Vector2):
-	super._init(shape)
-	
+
+func _init():
+	super._init()
+	var onBehaviorChange = func (behavior: BEHAVIOR):
+		currentBehavior = behavior
+	behaviorSignal.connect(onBehaviorChange)
 
 func _ready():
 	var onContact: Callable  = func (body):
 		if body.name == "player":
-			body.lifeSignal
-	self.area2D.body_entered.connect(onContact)
+			self.behaviorSignal.emit(BEHAVIOR.AGGRESSIVE)
+	self.area2DRange.body_entered.connect(onContact)
+	
+	var shape: RectangleShape2D =  RectangleShape2D.new()
+	shape.size = self.range
+	self.CollisionShape2DRange.shape = shape
 
 func behavior():
 	await get_tree().create_timer(reactionTimeSec).timeout

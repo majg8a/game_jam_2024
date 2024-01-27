@@ -2,9 +2,6 @@ extends enemy
 
 var walkInstance: walk = walk.new()
 
-func _init():
-	self.attack
-
 func _ready():
 	super._ready()
 #	var onContact: Callable  = func (body):
