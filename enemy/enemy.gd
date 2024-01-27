@@ -18,6 +18,9 @@ var behaviors: Dictionary = {
 		pass
 }
 
+signal targetSignal(target: player)
+var target: player = player.new()
+
 func _init():
 	super._init()
 	walkInstance = walk.new()
@@ -25,30 +28,24 @@ func _init():
 	var onBehaviorChange = func (behavior: BEHAVIOR):
 		currentBehavior = behavior
 	behaviorSignal.connect(onBehaviorChange)
+	target = player.new()
 
 func _ready():
-#	var newAnimationSpeed = speed.length() / reactionTimeSec  
-#	animations = {
-#		Vector2.UP: func ():
-#			self.animatedSprite2D.play("move_up",newAnimationSpeed),
-#		Vector2.RIGHT: func ():
-#			self.animatedSprite2D.play("move_right",newAnimationSpeed),
-#		Vector2.DOWN: func ():
-#			self.animatedSprite2D.play("move_down",newAnimationSpeed),
-#		Vector2.LEFT: func ():
-#			self.animatedSprite2D.play("move_left",newAnimationSpeed),
-#		Vector2.ZERO: func ():
-#			self.animatedSprite2D.play("idle",newAnimationSpeed)
-#	}
 	super._ready()
+	var onTargetChange = func (target: player):
+		self.target = target
+	targetSignal.connect(onTargetChange)
+	
 	var onBodyEntered: Callable  = func (body):
 		if body.name == "player":
 			self.behaviorSignal.emit(BEHAVIOR.AGGRESSIVE)
+			targetSignal.emit(body)
 	self.area2DRange.body_entered.connect(onBodyEntered)
 	
 	var onBodyExit: Callable  = func (body):
 		if body.name == "player":
 			self.behaviorSignal.emit(BEHAVIOR.IDLE)
+			targetSignal.emit(null)
 	self.area2DRange.body_exited.connect(onBodyExit)
 	
 	var shape: RectangleShape2D =  RectangleShape2D.new()

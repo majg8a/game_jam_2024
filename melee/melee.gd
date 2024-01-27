@@ -2,8 +2,7 @@ extends skill
 
 var damage: int = 1
 
-func _ready():
-	super._ready()
+func _process(delta):
 	position = (size / 2) * self.currentDirection
 
 func onContact(body):

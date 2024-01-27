@@ -11,5 +11,5 @@ func _init():
 		BEHAVIOR.IDLE: func ():
 			self.walkInstance.random(),
 		BEHAVIOR.AGGRESSIVE: func ():
-			pass
+			self.walkInstance.follow()
 	}
