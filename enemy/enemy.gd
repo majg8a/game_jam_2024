@@ -19,6 +19,7 @@ func _init():
 	behaviorSignal.connect(onBehaviorChange)
 
 func _ready():
+	super._ready()
 	var onBodyEntered: Callable  = func (body):
 		if body.name == "player":
 			self.behaviorSignal.emit(BEHAVIOR.AGGRESSIVE)

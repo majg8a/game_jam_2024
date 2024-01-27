@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://i0cl4xkdk10k"]
+[gd_scene load_steps=40 format=3 uid="uid://i0cl4xkdk10k"]
 
 [ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_qfbfy"]
+[ext_resource type="Script" path="res://enemy/enemy_ghost/enemy_ghost.gd" id="2_fcp6t"]
 [ext_resource type="Texture2D" uid="uid://ctm8yxvgdgy21" path="res://assets/ghost assets/GhostwalkFRONT-32x32-Sheet.png" id="2_ulalv"]
 [ext_resource type="Texture2D" uid="uid://c03h71jdfm7i0" path="res://assets/ghost assets/GhostwalkLEFT-32x32-Sheet.png" id="3_qromv"]
 [ext_resource type="Texture2D" uid="uid://bqpw8my5h1bkx" path="res://assets/ghost assets/GhostwalkRIGHT-32x32-Sheet.png" id="4_2allm"]
@@ -262,11 +263,14 @@ animations = [{
 
 [node name="enemy" parent="." instance=ExtResource("1_qfbfy")]
 
+[node name="entity" parent="enemy/character" index="0"]
+position = Vector2(293, 123)
+script = ExtResource("2_fcp6t")
+
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qcjji")
-animation = &"move_right"
-frame = 7
-frame_progress = 1.0
+animation = &"move_down"
 
 [editable path="enemy"]
 [editable path="enemy/character"]

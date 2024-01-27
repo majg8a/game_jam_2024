@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpfcg4nq4skf8"]
+
+[ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_mbqms"]
+[ext_resource type="Texture2D" uid="uid://cmlbx0p7pbyr2" path="res://assets/worm/worm_spritesheet_vertical.png" id="2_jtnpv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awdhv"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(0, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3fsc"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(26, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kw5f"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(0, 196, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtggv"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(26, 196, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qxri"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(52, 196, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wnuu"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(78, 196, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsf7h"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(104, 196, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2jd4"]
+atlas = ExtResource("2_jtnpv")
+region = Rect2(130, 196, 26, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tijtx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awdhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3fsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awdhv")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kw5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtggv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qxri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wnuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsf7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2jd4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_mbqms")]
+
+[node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tijtx")
+animation = &"walk"
+frame_progress = 0.908135
+
+[node name="CollisionShape2D" parent="enemy/character/entity" index="1"]
+position = Vector2(0.5, 1)
+
+[editable path="enemy"]
+[editable path="enemy/character"]
+[editable path="enemy/character/entity"]

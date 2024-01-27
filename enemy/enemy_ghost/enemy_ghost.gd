@@ -2,6 +2,10 @@ extends enemy
 
 var walkInstance: walk = walk.new()
 
+func _init():
+	super._init()
+	self.size = Vector2(15000,15000)
+
 func _ready():
 	super._ready()
 	var onDirectionChange = func (direction):

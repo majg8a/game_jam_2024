@@ -27,5 +27,6 @@ func _init():
 func _ready():
 	var shape:RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.size
-	self.collisionObject2D.shape = shape
+	print(collisionShape2D)
+	self.collisionShape2D.shape = shape
 
