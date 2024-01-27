@@ -10,12 +10,9 @@
 [node name="entity" parent="character" index="0"]
 script = ExtResource("2_khtof")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2DRange" type="Area2D" parent="character/entity" index="2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-[node name="Area2DRange" type="Area2D" parent="."]
-
-[node name="CollisionShape2DRange" type="CollisionShape2D" parent="Area2DRange"]
+[node name="CollisionShape2DRange" type="CollisionShape2D" parent="character/entity/Area2DRange"]
 
 [editable path="character"]
+[editable path="character/entity"]
