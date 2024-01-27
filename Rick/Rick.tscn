@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b55isxwvg2e4p"]
+
+[ext_resource type="VideoStream" path="res://assets/video assets/Never-Gonna-Give-You-Up-16-bits.ogv" id="1_y24ne"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_y24ne")
+autoplay = true
+expand = true
