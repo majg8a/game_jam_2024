@@ -1,0 +1,215 @@
+{
+	"frames": {
+		"LarvaDEATH-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvaHURT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 29,
+				"w": 78,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 78,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 78,
+				"h": 26
+			}
+		},
+		"LarvaattackBACK-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 57,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvaattackFRONT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 85,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvaattackLEFT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 113,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvaattackRIGHT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 141,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvawalkingBACK-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 169,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvawalkingFRONT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 197,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvawalkingLEFT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 225,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		},
+		"LarvawalkingRIGHT-26x26-Sheet.png": {
+			"frame": {
+				"x": 1,
+				"y": 253,
+				"w": 156,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 156,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 156,
+				"h": 26
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 158,
+			"h": 280
+		},
+		"scale": "1"
+	}
+}
