@@ -1,7 +1,7 @@
 class_name enemy extends character
 
 @onready var area2DRange: Area2D = $Area2DRange
-@onready var CollisionShape2DRange: CollisionObject2D = get_node("Area2DRange/CollisionShape2DRange")
+@onready var CollisionShape2DRange: CollisionShape2D = get_node("Area2DRange/CollisionShape2DRange")
 
 enum BEHAVIOR {IDLE, AGGRESSIVE}
 signal behaviorSignal(behavior: BEHAVIOR)
