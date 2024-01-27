@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b55isxwvg2e4p"]
+[gd_scene load_steps=3 format=3 uid="uid://b55isxwvg2e4p"]
 
 [ext_resource type="VideoStream" path="res://assets/video assets/Never-Gonna-Give-You-Up-16-bits.ogv" id="1_y24ne"]
+[ext_resource type="Script" path="res://Rick/VideoStreamPlayer.gd" id="2_nhv2g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,3 +21,6 @@ grow_vertical = 2
 stream = ExtResource("1_y24ne")
 autoplay = true
 expand = true
+script = ExtResource("2_nhv2g")
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
