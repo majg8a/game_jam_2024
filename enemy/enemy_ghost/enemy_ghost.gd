@@ -1,26 +1,15 @@
 extends enemy
 
-var walkInstance: walk = walk.new()
+
 
 func _init():
 	super._init()
 	self.size = Vector2(15,15)
-
-func _ready():
-	super._ready()
-	var onDirectionChange = func (direction):
-		self.animations[direction].call()
-	directionSignal.connect(onDirectionChange)
-	
-	
-func behavior():
-	super.behavior()
-	var behaviors: Dictionary = {
+	self.reactionTimeSec = 3
+	self.speed = Vector2(20,20)
+	behaviors = {
 		BEHAVIOR.IDLE: func ():
-			directionSignal.emit(walkInstance.random(self)),
+			self.walkInstance.random(),
 		BEHAVIOR.AGGRESSIVE: func ():
 			pass
 	}
-	
-	behaviors[self.currentBehavior].call()
-	

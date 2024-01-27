@@ -9,16 +9,37 @@ var currentBehavior = BEHAVIOR.IDLE
 var range:Vector2 = Vector2(2,2)
 var detectionRange: float = 2.0
 var speed: Vector2 = Vector2(2,2)
-var reactionTimeSec = 1
-
+var reactionTimeSec: float = 1
+var walkInstance: walk;
+var behaviors: Dictionary = {
+	BEHAVIOR.IDLE: func ():
+		pass,
+	BEHAVIOR.AGGRESSIVE: func ():
+		pass
+}
 
 func _init():
 	super._init()
+	walkInstance = walk.new()
+	self.add_child(walkInstance)
 	var onBehaviorChange = func (behavior: BEHAVIOR):
 		currentBehavior = behavior
 	behaviorSignal.connect(onBehaviorChange)
 
 func _ready():
+#	var newAnimationSpeed = speed.length() / reactionTimeSec  
+#	animations = {
+#		Vector2.UP: func ():
+#			self.animatedSprite2D.play("move_up",newAnimationSpeed),
+#		Vector2.RIGHT: func ():
+#			self.animatedSprite2D.play("move_right",newAnimationSpeed),
+#		Vector2.DOWN: func ():
+#			self.animatedSprite2D.play("move_down",newAnimationSpeed),
+#		Vector2.LEFT: func ():
+#			self.animatedSprite2D.play("move_left",newAnimationSpeed),
+#		Vector2.ZERO: func ():
+#			self.animatedSprite2D.play("idle",newAnimationSpeed)
+#	}
 	super._ready()
 	var onBodyEntered: Callable  = func (body):
 		if body.name == "player":
@@ -34,5 +55,12 @@ func _ready():
 	shape.size = self.range
 	self.CollisionShape2DRange.shape = shape
 
-func behavior():
+	var onDirectionChange = func (direction):
+		self.animations[direction].call()
+	directionSignal.connect(onDirectionChange)
+	movement()
+
+func movement():
+	behaviors[self.currentBehavior].call()
 	await get_tree().create_timer(reactionTimeSec).timeout
+	movement()

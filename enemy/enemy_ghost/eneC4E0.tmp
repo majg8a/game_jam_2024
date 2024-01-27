@@ -167,7 +167,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_22omd")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_down",
 "speed": 5.0
 }, {
@@ -196,7 +196,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_03sxr")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_left",
 "speed": 5.0
 }, {
@@ -225,7 +225,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_viiqk")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_right",
 "speed": 5.0
 }, {
@@ -254,7 +254,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ifmhy")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_up",
 "speed": 5.0
 }]
@@ -271,7 +271,7 @@ script = ExtResource("2_fcp6t")
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qcjji")
-animation = &"move_up"
+animation = &"move_down"
 
 [node name="CollisionShape2D" parent="enemy/character/entity/Area2D" index="0"]
 scale = Vector2(1, 1.19311)
