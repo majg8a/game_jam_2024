@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdym6m6esalq3"]
 
-[ext_resource type="Script" path="res://options_menu.gd" id="1_j2yxf"]
+[ext_resource type="Script" path="res://menu/options_menu.gd" id="1_j2yxf"]
 
 [node name="options_menu" type="Control"]
 layout_mode = 3
@@ -38,9 +38,3 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 10
 text = "Exit"
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[connection signal="exit_options_menu" from="." to="." method="_on_exit_options_menu"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

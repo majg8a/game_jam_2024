@@ -1,0 +1,1 @@
+signal init_dialog
