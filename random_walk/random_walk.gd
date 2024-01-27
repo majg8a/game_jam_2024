@@ -45,7 +45,8 @@ func generate():
 			var neighbor_position:Vector2 = position + direction2
 			if(tileMap.get_cell_source_id(0,position + direction2)== -1):
 				walls[neighbor_position] = wallTileNames[direction2]
-				print(wallTileNames[direction2])
+#				print(wallTileNames[direction2])
+				tileMap.set_cell(0,neighbor_position,1,Vector2i(0,0))
 		
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
