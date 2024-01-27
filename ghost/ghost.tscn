@@ -8,6 +8,8 @@
 [node name="enemy" parent="." instance=ExtResource("1_4f2m8")]
 
 [node name="entity" parent="enemy/character" index="0"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("2_iirq3")
 
 [editable path="enemy"]

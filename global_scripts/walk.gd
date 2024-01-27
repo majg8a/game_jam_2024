@@ -5,6 +5,7 @@ func random(node: CharacterBody2D = null):
 	var direction = directions.getRandomDirection()
 	if node != null:
 		node.move_and_collide( node.speed * direction)
+	return direction
 
 func breath_first(node: CharacterBody2D, targetNode: Node2D):
 	var distances = Direction.directions.map(func (dir: Vector2):
