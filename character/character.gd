@@ -1,5 +1,16 @@
 class_name character extends entity
 
+var animations: Dictionary = {
+	Vector2.UP: func ():
+		self.animatedSprite2D.play("up"),
+	Vector2.RIGHT: func ():
+		self.animatedSprite2D.play("right"),
+	Vector2.DOWN: func ():
+		self.animatedSprite2D.play("down"),
+	Vector2.LEFT: func ():
+		self.animatedSprite2D.play("left")
+}
+
 enum STATE {ALIVE, DEAD}
 
 signal maxLifeSignal(life:int)
