@@ -18,8 +18,10 @@ var movementAtions: Dictionary = {
 			self.move_and_collide(self.speed * Direction.directions[3]),
 }
 
-func behavior():
+func _process(delta):
 	self.camera2D.position = self.position
+
+func behavior():
 	if currentState == STATE.ALIVE:
 		for key in self.movementAtions.keys():
 			if Input.is_action_pressed(key):
