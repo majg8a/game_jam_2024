@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="Game Jam 2024"
-<<<<<<< HEAD
 run/main_scene="res://Rick/Rick.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-=======
-config/features=PackedStringArray("4.2", "Forward Plus")
->>>>>>> joushef
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="res://Rick/Rick.tscn"
 
 [autoload]
 
