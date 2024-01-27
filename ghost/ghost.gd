@@ -4,14 +4,19 @@ var walkInstance: walk = walk.new()
 
 func _ready():
 	super._ready()
-#	var onContact: Callable  = func (body):
-#		if body.name == "player":
-#
-#			body.lifeSignal
-#
-#	self.area2D.body_entered.connect(onContact)
+	var onDirectionChange = func (direction):
+		self.animations[direction].apply()
+	directionSignal.connect(onDirectionChange)
+	
 	
 func behavior():
 	super.behavior()
-	var direction = walkInstance.random(self)
-	self.animations[direction].apply()
+	var behaviors: Dictionary = {
+		BEHAVIOR.IDLE: func ():
+			directionSignal.emit(walkInstance.random(self)),
+		BEHAVIOR.AGGRESSIVE: func ():
+			pass
+	}
+	
+	behaviors[self.currentBehavior]
+	
