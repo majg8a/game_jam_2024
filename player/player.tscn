@@ -13,3 +13,4 @@ script = ExtResource("2_gvyqp")
 [node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
 
 [editable path="character"]
+[editable path="character/entity"]
