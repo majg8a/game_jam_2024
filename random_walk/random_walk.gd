@@ -1,9 +1,9 @@
 class_name random_walk extends map
 
-var iterations: int = 1000
+var iterations: int = 400
 var startingPosition: Vector2 = Vector2.ZERO
-var roomNumber: int = 50
-var hallwayLength: int = 5
+var roomNumber: int = 5
+var hallwayLength: int = 2
 
 func generate():
 	var floor: Dictionary = {}
