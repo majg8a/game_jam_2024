@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://csrmd5w5up6pp"]
+[gd_scene load_steps=51 format=3 uid="uid://csrmd5w5up6pp"]
 
 [ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_6hvuv"]
 [ext_resource type="Texture2D" uid="uid://bhaj2u71htd4m" path="res://assets/worm assets/spritesheet.png" id="2_7vhdp"]
@@ -94,10 +94,6 @@ region = Rect2(0, 224, 26, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3if8"]
 atlas = ExtResource("2_7vhdp")
 region = Rect2(130, 224, 26, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvnvf"]
-atlas = ExtResource("2_7vhdp")
-region = Rect2(0, 252, 26, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj32x"]
 atlas = ExtResource("2_7vhdp")
@@ -262,7 +258,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ars8l")
 }],
-"loop": false,
+"loop": true,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -282,7 +278,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5mdq7")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -294,9 +290,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_i3if8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yvnvf")
+"texture": SubResource("AtlasTexture_0p8b1")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -400,9 +396,8 @@ animations = [{
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t071y")
-animation = &"idle"
-frame = 2
-frame_progress = 1.0
+animation = &"death"
+frame_progress = 0.498763
 
 [editable path="enemy"]
 [editable path="enemy/character"]

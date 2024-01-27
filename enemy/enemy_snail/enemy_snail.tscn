@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://bktm16dcypw1r"]
+
+[ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_g367t"]
+[ext_resource type="Texture2D" uid="uid://qvvwnqoyu03x" path="res://assets/snail assets/Snail.png" id="2_wefsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twayw"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(0, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aedxv"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(35, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taalx"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(70, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk421"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(105, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yow3m"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(140, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oukb7"]
+atlas = ExtResource("2_wefsm")
+region = Rect2(175, 0, 35, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chjex"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twayw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aedxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taalx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk421")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yow3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oukb7")
+}],
+"loop": false,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="enemy_ghost" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_g367t")]
+
+[node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_chjex")
+animation = &"move"
+frame = 5
+frame_progress = 1.0
+
+[editable path="enemy"]
+[editable path="enemy/character"]
+[editable path="enemy/character/entity"]
