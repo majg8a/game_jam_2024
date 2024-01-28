@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs1k4sirpblku"]
+
+[ext_resource type="VideoStream" path="res://assets/video assets/Game-Over.ogv" id="1_a6fh0"]
+
+[node name="GameOver2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_a6fh0")
+autoplay = true
