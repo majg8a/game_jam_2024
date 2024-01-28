@@ -6,6 +6,7 @@ extends Control
 @onready var margin_container = $options_menu/MarginContainer
 @onready var vbox_container = $VBoxContainer
 @onready var exit_button = $options_menu/MarginContainer/VBoxContainer2/Exit_Button
+@onready var texture_rect = $TextureRect
 
 func _ready():
 	start_button.grab_focus()
@@ -18,6 +19,7 @@ func on_options_button_pressed():
 	vbox_container.visible = false
 	margin_container.set_process(true)
 	margin_container.visible = true
+	texture_rect.hide()
 	exit_button.grab_focus()
 	
 func on_quit_button_pressed():
@@ -27,6 +29,7 @@ func _on_exit_button_pressed():
 	vbox_container.visible = true
 	margin_container.set_process(false)
 	margin_container.visible = false
+	texture_rect.show()
 	start_button.grab_focus()
 	
 func handle_connecting_signals() -> void:
