@@ -1,7 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://bktm16dcypw1r"]
+[gd_scene load_steps=16 format=3 uid="uid://bktm16dcypw1r"]
 
 [ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_g367t"]
+[ext_resource type="Texture2D" uid="uid://dhawgtv62vi6x" path="res://assets/snail assets/Snail IDLE.png" id="2_v1cd0"]
 [ext_resource type="Texture2D" uid="uid://qvvwnqoyu03x" path="res://assets/snail assets/Snail.png" id="2_wefsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81s6o"]
+atlas = ExtResource("2_v1cd0")
+region = Rect2(0, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gai6e"]
+atlas = ExtResource("2_v1cd0")
+region = Rect2(35, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0fkg"]
+atlas = ExtResource("2_v1cd0")
+region = Rect2(70, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4e7p"]
+atlas = ExtResource("2_v1cd0")
+region = Rect2(105, 0, 35, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8v2"]
+atlas = ExtResource("2_v1cd0")
+region = Rect2(140, 0, 35, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twayw"]
 atlas = ExtResource("2_wefsm")
@@ -36,6 +57,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_81s6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gai6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0fkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4e7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn8v2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_twayw")
 }, {
 "duration": 1.0,
@@ -65,9 +106,8 @@ animations = [{
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_chjex")
-animation = &"move"
-frame = 5
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.0447008
 
 [editable path="enemy"]
 [editable path="enemy/character"]
