@@ -7,3 +7,5 @@
 
 [node name="entity" parent="." instance=ExtResource("1_jm41v")]
 script = ExtResource("2_tcdfc")
+
+[editable path="entity"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bb365t1eavs8g"]
+[gd_scene load_steps=70 format=3 uid="uid://bb365t1eavs8g"]
 
 [ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_jet1c"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_gvyqp"]
@@ -463,39 +463,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lam6u"]
-size = Vector2(43, 41)
-
 [node name="player" type="Node2D"]
 
 [node name="character" parent="." instance=ExtResource("1_jet1c")]
 
 [node name="entity" parent="character" index="0"]
 scale = Vector2(0.5, 0.5)
+collision_mask = 6
 script = ExtResource("2_gvyqp")
 
 [node name="AnimatedSprite2D" parent="character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ta4od")
-animation = &"idle"
-
-[node name="Area2D" parent="character/entity" index="1"]
-collision_mask = 6
-
-[node name="CollisionShape2D" parent="character/entity/Area2D" index="0"]
-debug_color = Color(0.105882, 0.4, 0, 0.419608)
+animation = &"death"
 
 [node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
 zoom = Vector2(5, 5)
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(54.5, 9.5)
-shape = SubResource("RectangleShape2D_lam6u")
-
-[connection signal="area_entered" from="character/entity/Area2D" to="character/entity" method="_on_area_2d_area_entered"]
 
 [editable path="character"]
 [editable path="character/entity"]
