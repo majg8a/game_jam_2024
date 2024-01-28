@@ -28,16 +28,13 @@ func _physics_process(delta):
 			self.animatedSprite2D.play("move_side")
 			self.animatedSprite2D.flip_h = false
 
-	move_and_slide()
+	var collision = move_and_collide(velocity * delta)
+	print(collision)
 
 func get_input():
 	input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	return input.normalized()
-
-
-
-
 
 #func _init():
 #	super._init()
@@ -90,4 +87,6 @@ func get_input():
 
 
 func _on_area_2d_area_entered(area):
-	print("entro en el area")
+#	print(area)
+#	print("entro en el area")
+	pass
