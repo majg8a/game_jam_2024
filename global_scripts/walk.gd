@@ -16,7 +16,6 @@ func random():
 func nearestDirection(targetPosition: Vector2):
 	var node = get_parent() 
 	if node == null:
-		print("ASdfasdfsa")
 		return Vector2.ZERO
 	var distances = Direction.directions.map(func (dir: Vector2):
 			return targetPosition - dir
