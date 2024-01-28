@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bb365t1eavs8g"]
+[gd_scene load_steps=71 format=3 uid="uid://bb365t1eavs8g"]
 
 [ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_jet1c"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_gvyqp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brsov6b751t2f" path="res://assets/main character assets/PiggywalkFRONT-32x32.png" id="10_l4h8x"]
 [ext_resource type="Texture2D" uid="uid://cuuqpkqfqqmom" path="res://assets/main character assets/PiggywalkSIDE-32x32.png" id="11_of668"]
 [ext_resource type="Texture2D" uid="uid://cywh4oqc0tu1r" path="res://assets/main character assets/PiggywalkBACK-32x32.png" id="12_owox0"]
+[ext_resource type="Texture2D" uid="uid://dmc72tj5mgej2" path="res://icon.svg" id="13_1oqiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6nog"]
 atlas = ExtResource("3_fxeyk")
@@ -468,24 +469,25 @@ animations = [{
 [node name="character" parent="." instance=ExtResource("1_jet1c")]
 
 [node name="entity" parent="character" index="0"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(5, 5)
 script = ExtResource("2_gvyqp")
 
 [node name="AnimatedSprite2D" parent="character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ta4od")
-animation = &"move_side"
+animation = &"idle"
 
 [node name="Area2D" parent="character/entity" index="1"]
-collision_mask = 6
-
-[node name="CollisionShape2D" parent="character/entity/Area2D" index="0"]
-debug_color = Color(0.105882, 0.4, 0, 0.419608)
+scale = Vector2(-907.067, 4.27821)
 
 [node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
-zoom = Vector2(5, 5)
+scale = Vector2(5, 5)
 
-[connection signal="area_entered" from="character/entity/Area2D" to="character/entity" method="_on_area_2d_area_entered"]
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3, 2)
+scale = Vector2(8.84375, 4.95313)
+texture = ExtResource("13_1oqiw")
 
 [editable path="character"]
 [editable path="character/entity"]
