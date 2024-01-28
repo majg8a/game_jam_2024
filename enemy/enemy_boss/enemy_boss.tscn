@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://ducot5p54ukmh"]
+
+[ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_lxig8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw2gt"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="enemy_boss" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_lxig8")]
+
+[node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
+sprite_frames = SubResource("SpriteFrames_gw2gt")
+animation = &"attack_right"
+
+[editable path="enemy"]
+[editable path="enemy/character"]
+[editable path="enemy/character/entity"]

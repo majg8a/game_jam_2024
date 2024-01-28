@@ -4,6 +4,7 @@ class_name entity extends CharacterBody2D
 @onready var area2D: Area2D = $Area2D
 
 var size:Vector2 = Vector2(15,15)
+
 signal directionSignal(direction: Vector2)
 var currentDirection = Vector2.ZERO
 

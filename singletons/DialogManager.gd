@@ -1,3 +1,4 @@
+#			is_dialog_active = false
 <<<<<<< HEAD
 extends Node
 
