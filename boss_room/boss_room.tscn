@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dejslva8jkmdq"]
+[gd_scene load_steps=14 format=3 uid="uid://dejslva8jkmdq"]
 
 [ext_resource type="Texture2D" uid="uid://b7yyagvl0shg4" path="res://assets/floor assets/Tileset mansion (16x16 tiles).png" id="1_yb22c"]
 [ext_resource type="Texture2D" uid="uid://c03sldg3ijlbk" path="res://assets/floor assets/floor01.jpg" id="2_4ss2e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://by7vk5oqagkla" path="res://assets/floor assets/floor04.jpg" id="4_pjvvr"]
 [ext_resource type="Texture2D" uid="uid://do0vt7qbqr7t1" path="res://assets/floor assets/e122b82a-1a2b-4526-8ec2-4be67e186388.png" id="5_ceb3i"]
 [ext_resource type="PackedScene" uid="uid://bb365t1eavs8g" path="res://player/player.tscn" id="6_vdnxt"]
+[ext_resource type="PackedScene" uid="uid://bxrlmhysdt57m" path="res://enemy/enemy_boss/enemy_boss.tscn" id="7_t31jo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5by5"]
 texture = ExtResource("1_yb22c")
@@ -86,3 +87,7 @@ zoom = Vector2(3.64, 4.1)
 
 [node name="player" parent="." instance=ExtResource("6_vdnxt")]
 position = Vector2(484, 328)
+
+[node name="enemy_boss" parent="." instance=ExtResource("7_t31jo")]
+texture_filter = 1
+position = Vector2(676, 314)
