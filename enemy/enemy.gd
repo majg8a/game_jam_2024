@@ -31,11 +31,7 @@ func _init():
 	
 #	test
 	target = player.new()
-<<<<<<< HEAD
 	target.position = Vector2(500,500)
-=======
-	target.position = Vector2(0,500)
->>>>>>> 0b167cf4b965360c0544aa77cd693f3966ccf944
 	currentBehavior = BEHAVIOR.AGGRESSIVE
 	
 func _ready():
