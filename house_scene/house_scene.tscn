@@ -1,3 +1,97 @@
-[gd_scene format=3 uid="uid://4du8fdjlk0g3"]
+[gd_scene load_steps=9 format=3 uid="uid://4du8fdjlk0g3"]
+
+[ext_resource type="Texture2D" uid="uid://cnb4ev851ltug" path="res://assets/house assets/house.png" id="1_0fe8h"]
+[ext_resource type="Script" path="res://house_scene/house_scene.gd" id="1_hcu4b"]
+[ext_resource type="PackedScene" uid="uid://bb365t1eavs8g" path="res://player/player.tscn" id="2_hbns7"]
+[ext_resource type="Script" path="res://house_scene/Enter.gd" id="3_iv60s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahykb"]
+size = Vector2(8, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_humwy"]
+size = Vector2(377, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7plow"]
+size = Vector2(168, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24lfg"]
+size = Vector2(31, 39)
 
 [node name="house_scene" type="Node2D"]
+script = ExtResource("1_hcu4b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 8.0
+offset_top = -14.0
+offset_right = 376.0
+offset_bottom = 211.0
+texture = ExtResource("1_0fe8h")
+
+[node name="Border01" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(-8, 14)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Border01"]
+position = Vector2(5, 99.5)
+shape = SubResource("RectangleShape2D_ahykb")
+
+[node name="Border02" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(-8, 14)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Border02"]
+position = Vector2(381, 98)
+shape = SubResource("RectangleShape2D_ahykb")
+
+[node name="Border03" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(2, -20)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Border03"]
+position = Vector2(187.5, 229)
+shape = SubResource("RectangleShape2D_humwy")
+
+[node name="Border04" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(-6, -227)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Border04"]
+position = Vector2(187.5, 229)
+shape = SubResource("RectangleShape2D_humwy")
+
+[node name="Wall01" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(-8, 14)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Wall01"]
+position = Vector2(92, 104.5)
+shape = SubResource("RectangleShape2D_7plow")
+
+[node name="Wall02" type="StaticBody2D" parent="TextureRect"]
+position = Vector2(193, 14)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Wall02"]
+position = Vector2(93, 104.5)
+shape = SubResource("RectangleShape2D_7plow")
+
+[node name="Enter" type="Area2D" parent="TextureRect"]
+script = ExtResource("3_iv60s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Enter"]
+position = Vector2(184.5, 121.5)
+shape = SubResource("RectangleShape2D_24lfg")
+
+[node name="Camera2D" type="Camera2D" parent="TextureRect"]
+position = Vector2(185, 105)
+zoom = Vector2(3, 3)
+
+[node name="player" parent="." instance=ExtResource("2_hbns7")]
+z_index = 1
+position = Vector2(38, 150)
+
+[connection signal="body_entered" from="TextureRect/Enter" to="." method="_on_enter_body_entered"]
+
+[editable path="player"]
+[editable path="player/character"]
+[editable path="player/character/entity"]
