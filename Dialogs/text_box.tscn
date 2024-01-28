@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddgvq5xv5pgyp"]
+
+[ext_resource type="Texture2D" uid="uid://dufvmk3j15q5d" path="res://assets/textbox assets/TextBox.png" id="1_lt07e"]
+[ext_resource type="Script" path="res://Dialogs/text_box.gd" id="1_npqle"]
+[ext_resource type="FontFile" uid="uid://cd0k1jvt8qaxt" path="res://assets/textbox assets/Pokemon Classic.ttf" id="3_grtgp"]
+[ext_resource type="Script" path="res://singletons/DialogManager.gd" id="4_vufie"]
+
+[node name="text_box" type="MarginContainer"]
+script = ExtResource("1_npqle")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_lt07e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_grtgp")
+text = "sdfsbsdfsdfsdfsdffsdgrweewrcxfvcwerfxfcvsedr
+werewrwerw
+rwerwer
+werw
+erwerwthdfcgwer
+
+wefsdcxf
+w34er
+"
+
+[node name="DisplayTimer" type="Timer" parent="."]
+script = ExtResource("4_vufie")
+
+[connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
