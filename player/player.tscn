@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bb365t1eavs8g"]
+[gd_scene load_steps=71 format=3 uid="uid://bb365t1eavs8g"]
 
 [ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_jet1c"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_gvyqp"]
@@ -463,6 +463,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6lun"]
+size = Vector2(22, 32)
+
 [node name="player" type="Node2D"]
 
 [node name="character" parent="." instance=ExtResource("1_jet1c")]
@@ -475,10 +478,14 @@ script = ExtResource("2_gvyqp")
 [node name="AnimatedSprite2D" parent="character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ta4od")
-animation = &"death"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
 zoom = Vector2(5, 5)
+
+[node name="CollisionShape2D" parent="character/entity" index="3"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_r6lun")
 
 [editable path="character"]
 [editable path="character/entity"]
