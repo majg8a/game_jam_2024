@@ -21,6 +21,12 @@ texture_filter = 1
 [node name="AudioStreamPlayer2D" parent="random_walk" index="1"]
 stream = ExtResource("4_ih48r")
 volume_db = 15.0
+autoplay = true
+
+[connection signal="area_entered" from="random_walk/map/player/character/entity/Area2D" to="random_walk/map/player/character/entity" method="_on_area_2d_area_entered" flags=18]
+[connection signal="area_shape_entered" from="random_walk/map/player/character/entity/Area2D" to="random_walk/map/player/character/entity" method="_on_area_2d_area_shape_entered" flags=18]
+[connection signal="body_entered" from="random_walk/map/player/character/entity/Area2D" to="random_walk/map/player/character/entity" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_shape_entered" from="random_walk/map/player/character/entity/Area2D" to="random_walk/map/player/character/entity" method="_on_area_2d_body_shape_entered" flags=18]
 
 [editable path="random_walk"]
 [editable path="random_walk/map"]

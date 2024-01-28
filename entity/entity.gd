@@ -30,4 +30,3 @@ func _ready():
 	var shape: RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.size
 	self.collisionShape2D.shape = shape
-

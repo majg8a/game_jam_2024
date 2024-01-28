@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://crk2i2rrdincc"]
+[gd_scene load_steps=3 format=3 uid="uid://crk2i2rrdincc"]
 
+[ext_resource type="Script" path="res://video/game_over.gd" id="1_1hqjm"]
 [ext_resource type="VideoStream" path="res://video/Game-Over.ogv" id="1_6tpwv"]
 
 [node name="game_over" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1hqjm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -25,3 +27,5 @@ offset_bottom = 840.0
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("1_6tpwv")
 autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

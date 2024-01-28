@@ -471,7 +471,7 @@ size = Vector2(22, 32)
 
 [node name="character" parent="." instance=ExtResource("1_jet1c")]
 
-[node name="entity" parent="character" index="0"]
+[node name="entity" parent="character" index="0" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 collision_mask = 14
 script = ExtResource("2_gvyqp")
@@ -480,6 +480,9 @@ script = ExtResource("2_gvyqp")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ta4od")
 animation = &"idle"
+
+[node name="Area2D" parent="character/entity" index="1"]
+collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="character/entity" index="2"]
 zoom = Vector2(5, 5)
