@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameConstants="*res://global_scripts/game_constants.gd"
+DialogManager="*res://singletons/DialogManager.gd"
 
 [layer_names]
 
