@@ -18,8 +18,21 @@ var behaviors: Dictionary = {
 		pass
 }
 
+var animations_attacks: Dictionary = {
+	Vector2.UP: func ():
+		self.animatedSprite2D.play("attack_up"),
+	Vector2.RIGHT: func ():
+		self.animatedSprite2D.play("attack_right"),
+	Vector2.DOWN: func ():
+		self.animatedSprite2D.play("attack_down"),
+	Vector2.LEFT: func ():
+		self.animatedSprite2D.play("attack_left"),
+	Vector2.ZERO: func ():
+		self.animatedSprite2D.play("idle")
+}
+
 signal targetSignal(target: player)
-var target: player = player.new()
+var target: player
 
 func _init():
 	super._init()
@@ -28,8 +41,12 @@ func _init():
 	var onBehaviorChange = func (behavior: BEHAVIOR):
 		currentBehavior = behavior
 	behaviorSignal.connect(onBehaviorChange)
+	
+#	test
 	target = player.new()
-
+	target.position = Vector2(0,500)
+	currentBehavior = BEHAVIOR.AGGRESSIVE
+	
 func _ready():
 	super._ready()
 	var onTargetChange = func (target: player):
@@ -58,6 +75,6 @@ func _ready():
 	movement()
 
 func movement():
-	behaviors[self.currentBehavior].call()
+	await behaviors[self.currentBehavior].call()
 	await get_tree().create_timer(reactionTimeSec).timeout
 	movement()

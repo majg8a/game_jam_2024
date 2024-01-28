@@ -11,9 +11,6 @@ var currentLife: int = currentMaxLife
 signal stateSignal(state: STATE)
 var currentState = STATE.ALIVE
 
-signal skillsSignals(skills: Array)
-var currentSkills: Array = []
-
 func _init():
 	super._init()
 	var onStateChange: Callable = func (state):

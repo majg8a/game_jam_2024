@@ -5,7 +5,7 @@ extends Control
 @onready var quit_button = $VBoxContainer/quit_button
 @onready var margin_container = $options_menu/MarginContainer
 @onready var vbox_container = $VBoxContainer
-@onready var exit_button = $options_menu/MarginContainer/VBoxContainer/Exit_Button
+@onready var exit_button = $options_menu/MarginContainer/VBoxContainer2/Exit_Button
 
 func _ready():
 	start_button.grab_focus()

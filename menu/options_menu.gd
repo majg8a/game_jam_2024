@@ -1,7 +1,8 @@
 class_name OptionsMenu
 extends Control
 
-@onready var exit_button = $MarginContainer/VBoxContainer/Exit_Button as Button
+@onready var exit_button = $MarginContainer/VBoxContainer2/Exit_Button
+
 
 func _ready():
 	exit_button.grab_focus()

@@ -2,7 +2,8 @@ class_name entity extends CharacterBody2D
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collisionShape2D: CollisionShape2D = get_node("Area2D/CollisionShape2D")
 @onready var area2D: Area2D = $Area2D
-var size:Vector2 = Vector2(1,1)
+
+var size:Vector2 = Vector2(15,15)
 signal directionSignal(direction: Vector2)
 var currentDirection = Vector2.ZERO
 
@@ -25,8 +26,7 @@ func _init():
 	directionSignal.connect(onDirectionChange)
 
 func _ready():
-	var shape:RectangleShape2D =  RectangleShape2D.new()
+	var shape: RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.size
-	print(collisionShape2D)
 	self.collisionShape2D.shape = shape
 

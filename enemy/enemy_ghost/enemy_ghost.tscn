@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://i0cl4xkdk10k"]
+[gd_scene load_steps=84 format=3 uid="uid://i0cl4xkdk10k"]
 
 [ext_resource type="PackedScene" uid="uid://c4yjsj86cupi" path="res://enemy/enemy.tscn" id="1_qfbfy"]
 [ext_resource type="Script" path="res://enemy/enemy_ghost/enemy_ghost.gd" id="2_fcp6t"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b88jya3xrtkop" path="res://assets/ghost assets/GhostdmgRIGHT.png" id="5_bkoyp"]
 [ext_resource type="Texture2D" uid="uid://bnnpguqh2jpq8" path="res://assets/ghost assets/GhostwalkBACK-32x32-Sheet.png" id="5_mj0qq"]
 [ext_resource type="Texture2D" uid="uid://cg8201m7v64mp" path="res://assets/ghost assets/GhostdmgBACK.png" id="6_8mlpl"]
+[ext_resource type="PackedScene" uid="uid://xiqow1dvn0s0" path="res://melee/melee.tscn" id="11_0ne81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qk5y"]
 atlas = ExtResource("3_b3igt")
@@ -577,6 +578,7 @@ animations = [{
 }]
 
 [node name="enemy_ghost" type="Node2D"]
+scale = Vector2(1.01521, 1.0097)
 
 [node name="enemy" parent="." instance=ExtResource("1_qfbfy")]
 
@@ -588,11 +590,15 @@ script = ExtResource("2_fcp6t")
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qcjji")
-animation = &"attack_up"
+animation = &"attack_down"
 
 [node name="CollisionShape2D" parent="enemy/character/entity/Area2D" index="0"]
 scale = Vector2(1, 1.19311)
 
+[node name="melee" parent="enemy/character/entity" index="3" instance=ExtResource("11_0ne81")]
+
 [editable path="enemy"]
 [editable path="enemy/character"]
 [editable path="enemy/character/entity"]
+[editable path="enemy/character/entity/melee"]
+[editable path="enemy/character/entity/melee/skill"]
