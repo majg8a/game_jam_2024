@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnwx1c7ukd8io"]
+[gd_scene load_steps=4 format=3 uid="uid://cnwx1c7ukd8io"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_l37mo"]
 [ext_resource type="Texture2D" uid="uid://n7fnada3jbln" path="res://assets/images/title.png" id="2_210m4"]
+[ext_resource type="AudioStream" uid="uid://b2bvihjbxy3uy" path="res://assets/sounds/intro/intro.wav" id="3_kktrc"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -159,6 +160,10 @@ text = "No Nvidia GPU detected, you can't use it :c"
 layout_mode = 2
 size_flags_vertical = 10
 text = "Exit"
+
+[node name="IntroSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kktrc")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
