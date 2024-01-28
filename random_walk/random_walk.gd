@@ -64,8 +64,11 @@ func generate():
 	for pos in sortedFloor:
 		if i % monsterQuantity == 0 && i !=0:
 			monsterSelection.shuffle()
-			tileMap.add_child(monsterSelection[0].instantiate())
+			var monster = monsterSelection[0].instantiate()
+			monster.position = pos * 16
+			tileMap.add_child(monster)
 		i+=1
+		
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
 	currentPosition = fardestDir[currentDirection] + currentDirection if floor.has(currentPosition) else currentPosition
