@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bushconi3q58o"]
+
+[ext_resource type="PackedScene" uid="uid://bb365t1eavs8g" path="res://player/player.tscn" id="1_5pvpr"]
+[ext_resource type="PackedScene" uid="uid://csrmd5w5up6pp" path="res://enemy/enemy_worm/enemy_worm.tscn" id="2_nn444"]
+
+[node name="collision_test" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_5pvpr")]
+position = Vector2(35, 9)
+
+[node name="enemy_worm" parent="." instance=ExtResource("2_nn444")]
+position = Vector2(83, 10)
