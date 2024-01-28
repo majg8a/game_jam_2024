@@ -7,6 +7,8 @@ extends Control
 @onready var vbox_container = $VBoxContainer
 @onready var exit_button = $options_menu/MarginContainer/VBoxContainer2/Exit_Button
 @onready var texture_rect = $TextureRect
+@onready var intro_sound = $IntroSound
+
 
 func _ready():
 	start_button.grab_focus()
