@@ -75,6 +75,6 @@ func _ready():
 	movement()
 
 func movement():
-	behaviors[self.currentBehavior].call()
+	await behaviors[self.currentBehavior].call()
 	await get_tree().create_timer(reactionTimeSec).timeout
 	movement()
