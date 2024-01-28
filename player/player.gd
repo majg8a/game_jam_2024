@@ -1,6 +1,6 @@
 class_name player extends character
-
-@onready var camera2D: Camera2D = $Camera2D
+@onready var melee:Node2D  = $melee
+@onready var skill:Melee  = melee.get_child(0)
 var speed: int = 650
 var accel = 7.0
 var input = Vector2.ZERO
@@ -8,20 +8,15 @@ var input = Vector2.ZERO
 func _init():
 	super._init()
 	size = Vector2(15,30)
-	
-	
-#func _ready():
-#	super._ready()
-#
-#	var on_state_change = func (state: STATE): 
-#		if state == STATE.DEAD:
-#			print("me mori")
-#			self.animatedSprite2D.play("death")
-#
-#	stateSignal.connect(on_state_change)
-#	stateSignal.emit(STATE.DEAD)
-	
+
 func _physics_process(delta):
+	if Input.is_action_pressed("attack"):
+		skill.toggleVisibilitySignal.emit()
+		await skill
+		self.animations_attacks[self.currentDirection].call()
+		await get_tree().create_timer(.5).timeout
+		skill.toggleVisibilitySignal.emit()
+		await skill
 	var playerInput = get_input()
 
 #	velocity = lerp(velocity, playerInput * speed, delta * accel)
@@ -30,7 +25,7 @@ func _physics_process(delta):
 	if currentState == STATE.DEAD:
 		return
 	
-	if playerInput == Vector2.ZERO:
+	if playerInput == Vector2.ZERO && !Input.is_action_pressed("attack"):
 		self.animatedSprite2D.play("idle")
 	else:
 		if playerInput.y > 0:
