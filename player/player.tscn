@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bb365t1eavs8g"]
+[gd_scene load_steps=72 format=3 uid="uid://bb365t1eavs8g"]
 
 [ext_resource type="PackedScene" uid="uid://5ot3dtlv84ox" path="res://character/character.tscn" id="1_jet1c"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_gvyqp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brsov6b751t2f" path="res://assets/main character assets/PiggywalkFRONT-32x32.png" id="10_l4h8x"]
 [ext_resource type="Texture2D" uid="uid://cuuqpkqfqqmom" path="res://assets/main character assets/PiggywalkSIDE-32x32.png" id="11_of668"]
 [ext_resource type="Texture2D" uid="uid://cywh4oqc0tu1r" path="res://assets/main character assets/PiggywalkBACK-32x32.png" id="12_owox0"]
+[ext_resource type="PackedScene" uid="uid://xiqow1dvn0s0" path="res://melee/melee.tscn" id="13_t7qqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6nog"]
 atlas = ExtResource("3_fxeyk")
@@ -486,6 +487,8 @@ zoom = Vector2(5, 5)
 [node name="CollisionShape2D" parent="character/entity" index="3"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_r6lun")
+
+[node name="melee" parent="character/entity" index="4" instance=ExtResource("13_t7qqb")]
 
 [editable path="character"]
 [editable path="character/entity"]

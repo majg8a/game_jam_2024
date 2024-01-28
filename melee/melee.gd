@@ -16,8 +16,11 @@ func _init():
 			self.hide()
 	toggleVisibilitySignal.connect(onToggle)
 	
-func _process(delta):
-	position = (size / 2) * self.currentDirection
+func setPosition(position):
+	self.position = position
+
+func setSize(size):
+	self.size = size
 
 func onContact(body):
 	if toggle:
