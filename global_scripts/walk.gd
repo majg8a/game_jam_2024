@@ -21,7 +21,6 @@ func nearestDirection(targetPosition: Vector2):
 	var distances = Direction.directions.map(func (dir: Vector2):
 			return (newTargetPosition - dir).angle()
 			)
-	print(distances)
 	var direction = Direction.directions[distances.find(distances.min())]
 	return direction
 
@@ -34,8 +33,3 @@ func follow():
 			await get_tree().create_timer(node.reactionTimeSec / node.speed.length()).timeout
 			node.directionSignal.emit(nearestDirection(node.target.position))
 			node.move_and_collide((node.speed.length() / node.reactionTimeSec) * targetPosition)
-
-#			var fraction: Vector2 = (targetPosition / targetPosition.length())
-##			node.directionSignal.emit(nearestDirection(fraction))
-#			await get_tree().create_timer(node.reactionTimeSec / node.speed.length()).timeout
-#			node.move_and_collide(targetPosition * fraction)

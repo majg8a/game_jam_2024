@@ -6,9 +6,6 @@
 [node name="melee" type="Node2D"]
 
 [node name="skill" parent="." instance=ExtResource("1_epv6s")]
-
-[node name="entity" parent="skill" index="0"]
 script = ExtResource("2_0aam1")
 
 [editable path="skill"]
-[editable path="skill/entity"]
