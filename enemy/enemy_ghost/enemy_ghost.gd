@@ -1,4 +1,4 @@
-class_name enemy_worm extends enemy
+class_name enemy_ghost extends enemy
 
 @onready var melee:Node2D  = $melee
 @onready var skill:Melee  = melee.get_child(0)

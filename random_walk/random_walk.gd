@@ -4,6 +4,7 @@ var iterations: int = 400
 var startingPosition: Vector2 = Vector2.ZERO
 var roomNumber: int = 5
 var hallwayLength: int = 2
+var monsterQuantity: int  = 10
 
 func generate():
 	var floor: Dictionary = {}
@@ -40,12 +41,17 @@ func generate():
 	}
 		
 	for position in floor.keys():
-		
 		for direction2 in direction.directions:
 			var neighbor_position:Vector2 = position + direction2
 			if(tileMap.get_cell_source_id(0,position + direction2)== -1):
 				walls[neighbor_position] = wallTileNames[direction2]
 				tileMap.set_cell(0,neighbor_position,1,Vector2i(0,0))
+				
+	var sortedFloor = floor.keys().duplicate()
+	sortedFloor.sort()
+	for i in range(sortedFloor):
+		if i % monsterQuantity == 0 && i !=0:
+			pass 
 		
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
