@@ -44,7 +44,7 @@ func _init():
 	
 #	test
 	target = player.new()
-	target.position = Vector2(0,500)
+	target.position = Vector2(500,100)
 	currentBehavior = BEHAVIOR.AGGRESSIVE
 	
 func _ready():

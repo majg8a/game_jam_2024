@@ -583,6 +583,7 @@ scale = Vector2(1.01521, 1.0097)
 [node name="enemy" parent="." instance=ExtResource("1_qfbfy")]
 
 [node name="entity" parent="enemy/character" index="0"]
+position = Vector2(293, 123)
 scale = Vector2(5, 5)
 script = ExtResource("2_fcp6t")
 
