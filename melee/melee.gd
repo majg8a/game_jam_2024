@@ -1,4 +1,4 @@
-extends skill
+class_name melee extends skill
 
 var damage: int = 1
 
