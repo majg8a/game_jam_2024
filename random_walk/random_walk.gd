@@ -2,6 +2,7 @@ class_name random_walk extends map
 
 @onready var ghost = preload("res://enemy/enemy_ghost/enemy_ghost.tscn")
 @onready var worm = preload("res://enemy/enemy_worm/enemy_worm.tscn")
+@onready var audio_stream_player_2d = $"../AudioStreamPlayer2D"
 
 
 var iterations: int = 400
@@ -11,6 +12,7 @@ var hallwayLength: int = 2
 var monsterQuantity: int  = 10
 
 func generate():
+	audio_stream_player_2d.play()
 	var floor: Dictionary = {}
 	var direction: Direction = Direction.new()
 	
