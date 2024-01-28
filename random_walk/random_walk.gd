@@ -53,6 +53,7 @@ func generate():
 				
 	var sortedFloor = floor.keys().duplicate()
 	sortedFloor.sort()
+<<<<<<< HEAD
 #	var vi = platform.instantiate()
 	
 #	var monsterSelection = [
@@ -68,6 +69,12 @@ func generate():
 			pass
 		i+=1
 		pass
+=======
+	for i in range(sortedFloor):
+		if i % monsterQuantity == 0 && i !=0:
+			pass 
+		
+>>>>>>> bcbcfc81b55ff250c9e66b55f7bf9a3656194945
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
 	currentPosition = fardestDir[currentDirection] + currentDirection if floor.has(currentPosition) else currentPosition
