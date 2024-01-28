@@ -19,15 +19,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_grtgp")
-text = "sdfsbsdfsdfsdfsdffsdgrweewrcxfvcwerfxfcvsedr
-werewrwerw
-rwerwer
-werw
-erwerwthdfcgwer
-
-wefsdcxf
-w34er
-"
+text = "v bvbnvnvbn"
 
 [node name="DisplayTimer" type="Timer" parent="."]
 script = ExtResource("4_vufie")
