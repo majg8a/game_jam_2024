@@ -1,6 +1,6 @@
 class_name character extends entity
 
-enum STATE {ALIVE, DEAD}
+enum STATE {ALIVE, DEAD, HURT}
 
 signal maxLifeSignal(life:int)
 var currentMaxLife = 10
@@ -23,7 +23,7 @@ func _init():
 	
 	var addLife: Callable  = func (amount: int):
 		currentLife = clamp(amount, 0, currentMaxLife)
-		if currentLife == 0 && STATE.ALIVE == currentState:
+		if currentLife == 0 && STATE.DEAD != currentState:
 			stateSignal.emit(STATE.DEAD)
 	lifeSignal.connect(addLife)
 
