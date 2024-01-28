@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5l6i6t13ux3l"]
+
+[ext_resource type="Texture2D" uid="uid://ca6qg3j1328oh" path="res://assets/main character assets/PiggyDEATHANIMATION-32x32.png" id="1_4w3d8"]
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -9233.0
+offset_top = 5.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_4w3d8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 120.0
+offset_right = 46.0
+offset_bottom = 146.0
+grow_horizontal = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(45, 0)
+text = "GAME OVER"
