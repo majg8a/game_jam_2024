@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu6rxyjh3dhxc"
-path="res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"
+uid="uid://6118r3sisxce"
+path="res://.godot/imported/DuckATKDOWN.png-df88a55dcb4e5ff251f7c48cf0236ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boss assets/DuckWalk.png"
-dest_files=["res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"]
+source_file="res://assets/boss assets/DuckATKDOWN.png"
+dest_files=["res://.godot/imported/DuckATKDOWN.png-df88a55dcb4e5ff251f7c48cf0236ca2.ctex"]
 
 [params]
 

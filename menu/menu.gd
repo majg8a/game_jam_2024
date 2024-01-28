@@ -9,13 +9,12 @@ extends Control
 @onready var texture_rect = $TextureRect
 @onready var intro_sound = $IntroSound
 
-
 func _ready():
 	start_button.grab_focus()
 	handle_connecting_signals()
 	
 func on_start_button_pressed():
-	get_tree().change_scene_to_file("res://test.tscn")
+	get_tree().change_scene_to_file("res://house_scene/house_scene.tscn")
 
 func on_options_button_pressed():
 	vbox_container.visible = false

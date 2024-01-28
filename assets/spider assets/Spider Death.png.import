@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu6rxyjh3dhxc"
-path="res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"
+uid="uid://cd0bkffydo7q3"
+path="res://.godot/imported/Spider Death.png-3dce4560b6a0a98a02303574cc80fa8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boss assets/DuckWalk.png"
-dest_files=["res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"]
+source_file="res://assets/spider assets/Spider Death.png"
+dest_files=["res://.godot/imported/Spider Death.png-3dce4560b6a0a98a02303574cc80fa8f.ctex"]
 
 [params]
 

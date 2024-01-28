@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu6rxyjh3dhxc"
-path="res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"
+uid="uid://cldwo4gc50tph"
+path="res://.godot/imported/Zombie1.png-b529a7149cdb4d4fac17c33af41c75a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boss assets/DuckWalk.png"
-dest_files=["res://.godot/imported/DuckWalk.png-3274e7a6f1a8c9ab93a6528735118bcd.ctex"]
+source_file="res://assets/zombie assets/Zombie1.png"
+dest_files=["res://.godot/imported/Zombie1.png-b529a7149cdb4d4fac17c33af41c75a7.ctex"]
 
 [params]
 

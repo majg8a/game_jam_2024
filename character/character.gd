@@ -13,8 +13,7 @@ var currentState = STATE.ALIVE
 
 func _init():
 	super._init()
-	var onStateChange: Callable = func (state):
-		currentState = state
+	var onStateChange: Callable = func (state): currentState = state
 	stateSignal.connect(onStateChange)
 
 	

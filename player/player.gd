@@ -1,19 +1,35 @@
 class_name player extends character
 
 @onready var camera2D: Camera2D = $Camera2D
-var speed: int = 100
-var accel = 1.0
+var speed: int = 650
+var accel = 7.0
 var input = Vector2.ZERO
 
 func _init():
 	super._init()
-	size = Vector2(15,15)
-
+	size = Vector2(15,30)
+	
+	
+#func _ready():
+#	super._ready()
+#
+#	var on_state_change = func (state: STATE): 
+#		if state == STATE.DEAD:
+#			print("me mori")
+#			self.animatedSprite2D.play("death")
+#
+#	stateSignal.connect(on_state_change)
+#	stateSignal.emit(STATE.DEAD)
+	
 func _physics_process(delta):
 	var playerInput = get_input()
 
-	velocity = lerp(velocity, playerInput * speed, delta * accel)
+#	velocity = lerp(velocity, playerInput * speed, delta * accel)
+	velocity = playerInput * speed * delta * accel
 
+	if currentState == STATE.DEAD:
+		return
+	
 	if playerInput == Vector2.ZERO:
 		self.animatedSprite2D.play("idle")
 	else:
@@ -27,9 +43,13 @@ func _physics_process(delta):
 		elif playerInput.x < 0:
 			self.animatedSprite2D.play("move_side")
 			self.animatedSprite2D.flip_h = false
-
-	var collision = move_and_collide(velocity * delta)
-	print(collision)
+	
+	move_and_slide()
+	
+#func get_input():
+#	var input = Input.get_vector("left", "right", "up", "down")
+#	velocity = input * speed
+#	return velocity
 
 func get_input():
 	input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -87,6 +107,6 @@ func get_input():
 
 
 func _on_area_2d_area_entered(area):
-#	print(area)
+	print("area")
 #	print("entro en el area")
-	pass
+
