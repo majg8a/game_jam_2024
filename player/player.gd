@@ -1,13 +1,13 @@
 class_name player extends character
 
 @onready var camera2D: Camera2D = $Camera2D
-var speed: int = 100
-var accel = 1.0
+var speed: int = 650
+var accel = 7.0
 var input = Vector2.ZERO
 
 func _init():
 	super._init()
-	size = Vector2(15,15)
+	size = Vector2(15,30)
 	
 	
 #func _ready():
@@ -24,7 +24,8 @@ func _init():
 func _physics_process(delta):
 	var playerInput = get_input()
 
-	velocity = lerp(velocity, playerInput * speed, delta * accel)
+#	velocity = lerp(velocity, playerInput * speed, delta * accel)
+	velocity = playerInput * speed * delta * accel
 
 	if currentState == STATE.DEAD:
 		return
@@ -44,7 +45,11 @@ func _physics_process(delta):
 			self.animatedSprite2D.flip_h = false
 	
 	move_and_slide()
-
+	
+#func get_input():
+#	var input = Input.get_vector("left", "right", "up", "down")
+#	velocity = input * speed
+#	return velocity
 
 func get_input():
 	input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
