@@ -29,11 +29,6 @@ func _init():
 		currentBehavior = behavior
 	behaviorSignal.connect(onBehaviorChange)
 	
-#	test
-	target = player.new()
-	target.position = Vector2(500,500)
-	currentBehavior = BEHAVIOR.AGGRESSIVE
-	
 func _ready():
 	super._ready()
 	var onTargetChange = func (target: player):
