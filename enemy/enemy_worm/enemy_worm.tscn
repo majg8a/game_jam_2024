@@ -375,7 +375,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5mdq7")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -496,9 +496,7 @@ script = ExtResource("2_isbip")
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t071y")
-animation = &"attack_left"
-frame = 5
-frame_progress = 1.0
+animation = &"hurt"
 
 [editable path="enemy"]
 [editable path="enemy/character"]

@@ -41,7 +41,12 @@ func _init():
 	var onBehaviorChange = func (behavior: BEHAVIOR):
 		currentBehavior = behavior
 	behaviorSignal.connect(onBehaviorChange)
-
+	
+#	test
+	target = player.new()
+	target.position = self.position * 1.2
+	currentBehavior = BEHAVIOR.AGGRESSIVE
+	
 func _ready():
 	super._ready()
 	var onTargetChange = func (target: player):

@@ -25,8 +25,7 @@ func _init():
 	directionSignal.connect(onDirectionChange)
 
 func _ready():
-	var shape:RectangleShape2D =  RectangleShape2D.new()
+	var shape: RectangleShape2D =  RectangleShape2D.new()
 	shape.size = self.size
-	print(collisionShape2D)
 	self.collisionShape2D.shape = shape
 
