@@ -1,6 +1,6 @@
 extends Node
 
-@onready var text_box_scene = preload("res://Dialogs/text_box.tscn")
+@onready var text_box_scene = preload("res://dialogs/text_box.tscn")
 
 var dialog_lines:Array[String] =[]
 var current_line_index = 0
@@ -26,7 +26,6 @@ func _show_text_box():
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
 	text_box.global_position = text_box_position
-	print(current_line_index)
 	text_box.display_text(dialog_lines[current_line_index])
 	can_advance_line = false
 	
@@ -34,9 +33,9 @@ func _on_text_box_finished_displaying():
 	can_advance_line = true
 
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if(
-		event.is_action_pressed("advance_dialog") &&
+		_event.is_action_pressed("advance_dialog") &&
 		is_dialog_active && 
 		can_advance_line
 	):
@@ -47,4 +46,4 @@ func _unhandled_input(event):
 			is_dialog_active = false
 			current_line_index = 0
 			return
-	_show_text_box()
+		_show_text_box()
