@@ -18,19 +18,6 @@ var behaviors: Dictionary = {
 		pass
 }
 
-var animations_attacks: Dictionary = {
-	Vector2.UP: func ():
-		self.animatedSprite2D.play("attack_up"),
-	Vector2.RIGHT: func ():
-		self.animatedSprite2D.play("attack_right"),
-	Vector2.DOWN: func ():
-		self.animatedSprite2D.play("attack_down"),
-	Vector2.LEFT: func ():
-		self.animatedSprite2D.play("attack_left"),
-	Vector2.ZERO: func ():
-		self.animatedSprite2D.play("idle")
-}
-
 signal targetSignal(target: player)
 var target: player
 
@@ -44,7 +31,11 @@ func _init():
 	
 #	test
 	target = player.new()
-	target.position = Vector2(500,100)
+<<<<<<< HEAD
+	target.position = Vector2(500,500)
+=======
+	target.position = Vector2(0,500)
+>>>>>>> 0b167cf4b965360c0544aa77cd693f3966ccf944
 	currentBehavior = BEHAVIOR.AGGRESSIVE
 	
 func _ready():
@@ -75,6 +66,7 @@ func _ready():
 	movement()
 
 func movement():
-	await behaviors[self.currentBehavior].call()
+	if currentState == STATE.ALIVE:
+		await behaviors[self.currentBehavior].call()
 	await get_tree().create_timer(reactionTimeSec).timeout
 	movement()
