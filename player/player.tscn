@@ -472,7 +472,7 @@ size = Vector2(22, 32)
 
 [node name="entity" parent="character" index="0"]
 scale = Vector2(0.5, 0.5)
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("2_gvyqp")
 
 [node name="AnimatedSprite2D" parent="character/entity" index="0"]

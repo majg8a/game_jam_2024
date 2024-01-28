@@ -17,9 +17,6 @@ tile_set = ExtResource("2_ml48t")
 [node name="entity" parent="random_walk/map/player/character" index="0"]
 texture_filter = 1
 
-[node name="AnimatedSprite2D" parent="random_walk/map/player/character/entity" index="0"]
-animation = &"idle"
-
 [editable path="random_walk"]
 [editable path="random_walk/map"]
 [editable path="random_walk/map/player"]
