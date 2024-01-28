@@ -9,4 +9,4 @@
 position = Vector2(35, 9)
 
 [node name="enemy_worm" parent="." instance=ExtResource("2_nn444")]
-position = Vector2(83, 10)
+position = Vector2(36, 12)
