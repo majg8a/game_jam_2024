@@ -12,13 +12,13 @@
 texture_filter = 1
 tile_set = ExtResource("2_ml48t")
 
-[node name="player" parent="random_walk/map" index="1" instance=ExtResource("2_lm1s7")]
+[node name="player" parent="random_walk" instance=ExtResource("2_lm1s7")]
 
-[node name="entity" parent="random_walk/map/player/character" index="0"]
+[node name="entity" parent="random_walk/player/character" index="0"]
 texture_filter = 1
 
 [editable path="random_walk"]
 [editable path="random_walk/map"]
-[editable path="random_walk/map/player"]
-[editable path="random_walk/map/player/character"]
-[editable path="random_walk/map/player/character/entity"]
+[editable path="random_walk/player"]
+[editable path="random_walk/player/character"]
+[editable path="random_walk/player/character/entity"]

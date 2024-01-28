@@ -497,6 +497,12 @@ script = ExtResource("2_isbip")
 [node name="AnimatedSprite2D" parent="enemy/character/entity" index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t071y")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Area2D" parent="enemy/character/entity" index="1"]
+collision_layer = 2
+collision_mask = 5
 animation = &"hurt"
 
 [node name="melee" parent="enemy/character/entity" index="3" instance=ExtResource("6_flyf6")]
