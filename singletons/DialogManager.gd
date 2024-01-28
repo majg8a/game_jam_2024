@@ -22,6 +22,8 @@ func start_dialog(position: Vector2, lines: Array[String]):
 	is_dialog_active = true
 	
 func _show_text_box():
+	if len(dialog_lines) == 0:
+		return
 	text_box = text_box_scene.instantiate()
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
