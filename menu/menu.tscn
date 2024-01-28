@@ -72,14 +72,86 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = -48
 
-[node name="Label" type="Label" parent="options_menu/MarginContainer/VBoxContainer"]
+[node name="Options_Label" type="Label" parent="options_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit_Button" type="Button" parent="options_menu/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="options_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+
+[node name="GridContainer" type="GridContainer" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer"]
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Graphics"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Ray Tracing"
+
+[node name="CheckButton2" type="CheckButton" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "VSync"
+
+[node name="Label3" type="Label" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Display mode"
+horizontal_alignment = 1
+
+[node name="OptionButton2" type="OptionButton" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="Label2" type="Label" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Resolution"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1440×900"
+popup/item_1/id = 1
+popup/item_2/text = "1280×720"
+popup/item_2/id = 2
+
+[node name="Label4" type="Label" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="options_menu/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+value = 100.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="options_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="options_menu/MarginContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "No Nvidia GPU detected, you can't use it :c"
+
+[node name="Exit_Button" type="Button" parent="options_menu/MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 10
 text = "Exit"
@@ -87,4 +159,4 @@ text = "Exit"
 [connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="options_menu/MarginContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="options_menu/MarginContainer/VBoxContainer2/Exit_Button" to="." method="_on_exit_button_pressed"]
