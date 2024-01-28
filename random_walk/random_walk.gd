@@ -1,5 +1,9 @@
 class_name random_walk extends map
 
+#@onready var ghost = preload("res://enemy/enemy_ghost/enemy_ghost.tscn")
+#@onready var worm = preload("res://enemy/enemy_worm/enemy_worm.tscn")
+
+
 var iterations: int = 400
 var startingPosition: Vector2 = Vector2.ZERO
 var roomNumber: int = 5
@@ -49,10 +53,21 @@ func generate():
 				
 	var sortedFloor = floor.keys().duplicate()
 	sortedFloor.sort()
-	for i in range(sortedFloor):
+#	var vi = platform.instantiate()
+	
+#	var monsterSelection = [
+#		worm,
+#		ghost
+#	]
+	
+	var i  = 0
+	for pos in sortedFloor:
 		if i % monsterQuantity == 0 && i !=0:
-			pass 
-		
+#			monsterSelection.shuffle()
+#			tileMap.add_child(monsterSelection[0].instantiate())
+			pass
+		i+=1
+		pass
 func addToFloor(floor: Dictionary,fardestDir: Dictionary, currentPosition: Vector2 ,currentDirection: Vector2):
 	currentPosition += currentDirection
 	currentPosition = fardestDir[currentDirection] + currentDirection if floor.has(currentPosition) else currentPosition
